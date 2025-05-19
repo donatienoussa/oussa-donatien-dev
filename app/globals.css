@@ -57,6 +57,16 @@
 }
 
 
+@layer base {
+  * {
+    @apply !scroll-smooth;
+  }
+  button {
+    @apply active:outline-none;
+  }
+}
+
+
 /* Style pour les conteneurs */
 .container {
   @apply mx-auto px-8;

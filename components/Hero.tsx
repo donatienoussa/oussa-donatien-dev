@@ -45,21 +45,21 @@ function Hero() {
                     </h2>
 
                     <TextGenerateEffect
-                        words="Transformer vos idées en Apps mobile performantes"
+                        words="Transformez vos idées en Apps mobile performantes"
                         className="text-center text-[40px] md:text-5xl lg:text-6xl font-semibold"
                     />
 
                     <p className='text-center  md:tracking-wider mb-4 text-sm  md:text-lg lg-text-2xl text-white'>
-                        Salut, je suis Donatien OUSSA, dev mobile
+                        Salut, je suis Donatien OUSSA, développeur fullstack spécialisé en applications mobiles.
                     </p>
 
-                    <Link href="#about" className='rounded-2xl'>
+                    <a href="#projects" className='rounded-2xl'>
                         <MagicButton
                             title="Voir mon travail"
                             position='right'
                             icon={<FaLocationArrow /> }
                         />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </div>
