@@ -1,26 +1,212 @@
 @import "tailwindcss";
 
+
+/* Ajout des variables de couleurs pour le thème */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #000;
+  --black-100: #000319;
+  --black-200: rgba(17, 25, 40, 0.75);
+  --black-300: rgba(255, 255, 255, 0.125);
+
+  --white: #FFF;
+  --white-100: #BEC1DD;
+  --white-200: #C1C2D3;
+
+  --blue-100: #E4ECFF;
+
+  --purple: #CBACF9;
+
+  --border: hsl(var(--border));
+  --input: hsl(var(--input));
+  --ring: hsl(var(--ring));
+  --background: hsl(var(--background));
+  --foreground: hsl(var(--foreground));
+
+  --primary: hsl(var(--primary));
+  --primary-foreground: hsl(var(--primary-foreground));
+
+  --secondary: hsl(var(--secondary));
+  --secondary-foreground: hsl(var(--secondary-foreground));
+
+  --destructive: hsl(var(--destructive));
+  --destructive-foreground: hsl(var(--destructive-foreground));
+
+  --muted: hsl(var(--muted));
+  --muted-foreground: hsl(var(--muted-foreground));
+
+  --accent: hsl(var(--accent));
+  --accent-foreground: hsl(var(--accent-foreground));
+
+  --popover: hsl(var(--popover));
+  --popover-foreground: hsl(var(--popover-foreground));
+
+  --card: hsl(var(--card));
+  --card-foreground: hsl(var(--card-foreground));
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* Style pour les conteneurs */
+.container {
+  @apply mx-auto px-8;
+  max-width: 100%;
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Border radius */
+.rounded-lg {
+  border-radius: var(--radius);
+}
+
+.rounded-md {
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.rounded-sm {
+  border-radius: calc(var(--radius) - 4px);
+}
+
+/* Animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+/* Animations applicables */
+.animation-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animation-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+.animation-spotlight {
+  animation: spotlight 2s ease .75s 1 forwards;
+}
+
+.animation-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+
+.animation-first {
+  animation: moveVertical 30s ease infinite;
+}
+
+.animation-second {
+  animation: moveInCircle 20s reverse infinite;
+}
+
+.animation-third {
+  animation: moveInCircle 40s linear infinite;
+}
+
+.animation-fourth {
+  animation: moveHorizontal 40s ease infinite;
+}
+
+.animation-fifth {
+  animation: moveInCircle 20s ease infinite;
+}
+
+.animation-scroll {
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+
+@layer utilities {
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
 }
