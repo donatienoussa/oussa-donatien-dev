@@ -1,15 +1,15 @@
-import Link from 'next/link';
 import React from 'react'
 import { MagicButton } from './ui/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa6';
 import { socialMedia } from '@/data';
 import Image from 'next/image';
+import CustomLink from './Link';
 
 function Footer() {
   
     return (
-        <footer id="contact" className="w-full pt-20 pb-10 text-white">
-            {/* <div className="w-full h-66 absolute left-0 -bottom-72">
+        <footer id="contact" className="w-full pt-5 pb-2  text-white">
+            {/* <div className="w-full h-30 relative left-0">
                 <Image 
                     src="/footer-grid.svg"
                     alt="footer-grid"
@@ -19,22 +19,36 @@ function Footer() {
                 />
             </div> */}
 
-            <div className='flex flex-col items-center'>
+            <div className='flex flex-col items-center justify-center '>
                 <h1 className="heading lg:max-w-[45vw]">
-                    Ready to take <span className="text-purple-600">your</span> digital presence to next level ? 
+                    Prêt à faire passer {``}  
+                    <span className="text-purple-600">votre</span> présence numérique au niveau supérieur ?
                 </h1>
                 <p className="text-white-200 md:mt-10 my-5 text-center">
-                    Reach out to me today and let's discuss how I can help you achieve your goals 
+                    Contactez-moi dès aujourd’hui et discutons de la façon dont je peux vous aider à atteindre vos objectifs ! 
                 </p>
-                <Link 
-                    href="mailto:donatienoussaodb@gmail.com"
-                >
-                    <MagicButton 
-                        title="Let's Get in Touch"
-                        icon={<FaLocationArrow />}
-                        position="right"
-                    />    
-                </Link>
+                <div className="md:flex justify-center items-center gap-5">
+                    <CustomLink
+                        href="mailto:donatienoussaodb@gmail.com"
+                    >
+                        <MagicButton
+                            title="Écrivez-moi sur Gmail"
+                            icon={<FaLocationArrow />}
+                            position="right"
+                        />
+                    </CustomLink>
+
+                    <CustomLink
+                        href="https://wa.me/+2290162140234"
+                    >
+                        <MagicButton
+                            title="Ecrivez-moi sur whatsapp"
+                            icon={<FaLocationArrow />}
+                            position="right"
+                        />
+                    </CustomLink>
+                </div>
+                
             </div>
 
             <div className='flex justify-between items-center mt-16'>
@@ -48,18 +62,18 @@ function Footer() {
                             key={profile.id}
                             className='h-10 w-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-80 bg-black-200 rounded-lg border border-black-300'
                         >
-                            <Image
-                                src={profile.img}
-                                alt={profile.img}
-                                width="20"
-                                height="20"
-                            />
+                            <CustomLink href={profile.link} target="_blank">
+                                <Image
+                                    src={profile.img}
+                                    alt={profile.img}
+                                    width="20"
+                                    height="20"
+                                />
+                            </CustomLink>
                         </div>
                     ))}
                 </div>
-            </div>
-
-            
+            </div>          
         </footer>
     );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Testimonial } from "@/types";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -10,11 +11,7 @@ export const InfiniteMovingCards = ({
     pauseOnHover = true,
     className,
 }: {
-    items: {
-        quote: string;
-        name: string;
-        title: string;
-    }[];
+    items: Testimonial[];
     direction?: "left" | "right";
     speed?: "fast" | "normal" | "slow";
     pauseOnHover?: boolean;
@@ -108,9 +105,9 @@ export const InfiniteMovingCards = ({
                             <div className="relative z-20 mt-6 flex flex-row items-center">
                                 <span className="flex flex-row gap-1">
                                     
-                                    <div className="me-3">
+                                    {/* <div className="me-3">
                                         <img src="/profile.svg" alt="profile" />
-                                    </div>
+                                    </div> */}
                                     <div>
                                         <span className="text-sm leading-[1.6] text-white font-bold dark:text-gray-400">
                                             {item.name}

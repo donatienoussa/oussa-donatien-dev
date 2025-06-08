@@ -9,7 +9,7 @@ import { FaLocationArrow } from 'react-icons/fa6'
 function Hero() {
   
     return (
-        <div className='pb-20 pt-36'>
+        <div className='pb-20 pt-0'>
             <div>
                 <Spotlight
                     className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -50,16 +50,28 @@ function Hero() {
                     />
 
                     <p className='text-center  md:tracking-wider mb-4 text-sm  md:text-lg lg-text-2xl text-white'>
-                        Salut, je suis Donatien OUSSA, développeur fullstack spécialisé en applications mobiles.
+                        Je suis développeur mobile fullstack, créateur d &apos; applications iOS & Android sur mesure
                     </p>
 
-                    <a href="#projects" className='rounded-2xl'>
-                        <MagicButton
-                            title="Voir mon travail"
-                            position='right'
-                            icon={<FaLocationArrow /> }
-                        />
-                    </a>
+
+                    {/** Call to actions */}
+                    <div className="flex flex-col md:flex-row justify-center items-center  gap-5">
+                        <Link href="https://wa.me/+2290162140234" className='rounded-2xl'>
+                            <MagicButton
+                                title="Discutons de votre projet"
+                                position='right'
+                                icon={<FaLocationArrow />}
+                            />
+                        </Link>
+
+                        <Link href="#projects" className='rounded-2xl'>
+                            <MagicButton
+                                title="Voir mes projets"
+                                position='right'
+                                icon={<FaLocationArrow />}
+                            />
+                        </Link>
+                    </div>      
                 </div>
             </div>
         </div>

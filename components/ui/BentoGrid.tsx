@@ -12,6 +12,7 @@ import animationData from "@/data/confetti.json";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import { MagicButton } from "./MagicButton";
 import { GlobeDemo } from "./GridGlobe";
+import Image from "next/image";
 
 
 export const BentoGrid = ({
@@ -53,8 +54,8 @@ export const BentoGridItem = ({
     imgClassName?: string;
     spareImg?: string;
 }) => {
-    const leftLists = ["ReactJS", "Express", "Typescript"];
-    const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+    const leftLists = ["Next.js", "Expo", "Typescript"];
+    const rightLists = ["Nativewind", "Supabase", "Appwrite"];
 
     const [copied, setCopied] = useState(false);
 
@@ -76,7 +77,6 @@ export const BentoGridItem = ({
     return (
         <div
             className={cn(
-                // remove p-4 rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white  border border-transparent, add border border-white/[0.1] overflow-hidden relative
                 "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
                 className
             )}
@@ -92,7 +92,7 @@ export const BentoGridItem = ({
                 {/** If an image exists, then show it. It cover the container */}
                 <div className="w-full h-full absolute">
                     {img && (
-                        <img
+                        <Image
                             src={img}
                             alt={img}
                             className={cn(imgClassName, "object-cover object-center")}
@@ -103,7 +103,7 @@ export const BentoGridItem = ({
                 {/** Spare image est une image qu'on affcihe en bas à droite.  */}
                 <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"}`}>
                     {spareImg && (
-                        <img
+                        <Image
                             src={spareImg}
                             alt={spareImg}
                             //   width={220}
@@ -185,7 +185,7 @@ export const BentoGridItem = ({
                             </div>
 
                             <MagicButton
-                                title={copied ? "Email is Copied!" : "Copy my email address"}
+                                title={copied ? "Adresse e-mail copiée!" : "Copier mon adresse e-mail"}
                                 icon={<IoCopyOutline />}
                                 position="left"
                                 handleClick={handleCopy}

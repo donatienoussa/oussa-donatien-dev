@@ -2,15 +2,20 @@ import { workExperience } from '@/data'
 import React from 'react'
 import { Button } from './ui/moving-border'
 import Image from 'next/image'
+import { Title } from './ui/Title'
+import { Quote } from './Quote'
 
 function Experience() {
   
   return (
-    <div  className='py-4 text-white mt-10'>
-      <h2 className="heading">Mon   {` `}
-        <span className="text-purple-600">Experience de Travail</span>
-      </h2>
-
+    <div  className='py-20 text-white mt-10'>
+      
+      <Title title="5.Mon expérience de travail" />
+      <Quote
+        quote={"« L’expérience n’est pas ce qui nous arrive, c’est ce que nous faisons de ce qui nous arrive. »"}
+        author={"— Aldous Huxley"}
+      /> 
+      
       <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10'>
         {workExperience.map((card) => (
           
@@ -36,8 +41,7 @@ function Experience() {
                 </p>
               </div>  
             </div>
-            </Button>
-          
+          </Button>
         ))}
       </div>
     </div>

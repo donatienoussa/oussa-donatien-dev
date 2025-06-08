@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 
 export const PinContainer = ({
     children,
-    title,
     href,
     className,
     containerClassName,
