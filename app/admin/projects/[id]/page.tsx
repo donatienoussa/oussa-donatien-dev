@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { useAppwrite } from "@/hooks/useAppwrite";
 import { getProjectById } from "@/lib/actions/projects";
 import { FaProjectDiagram } from "react-icons/fa";
-import Image from "next/image";
+
 
 export default function ProjectDetails() {
     const params = useParams();
@@ -33,11 +33,9 @@ export default function ProjectDetails() {
                     {project.title}
                 </h2>
 
-                <Image
+                <img
                     src={project.img}
                     alt={project.title}
-                    width={800}
-                    height={400}
                     className="rounded-xl object-cover w-full h-auto"
                 />
 

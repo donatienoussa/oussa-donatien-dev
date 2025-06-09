@@ -22,11 +22,8 @@ export default function AdminLayout({children}:{children: ReactNode}) {
         <nav className="flex-1 p-4 space-y-2">
           <NavLink link="/" label="Tableau de bord" />
           <NavLink link="/admin/projects" label="Projets" />
-          <NavLink link="" label="Compétences" />
           <NavLink link="/admin/blog" label="Blog" />
           <NavLink link="/admin/testimonials" label="Témoignages" />
-          <NavLink link="" label="Expériences" />
-          <NavLink link="" label="Approche" />
         </nav>
         <div className="p-4 border-t text-sm text-gray-500 dark:border-gray-700 dark:text-gray-400">
           Connecté en tant que {user?.email}

@@ -6,6 +6,7 @@ import { MoreHorizontal } from 'lucide-react';
 import { fetchPosts } from '@/lib/actions/posts';
 import { useAppwrite } from '@/hooks/useAppwrite';
 import { FaPlus } from 'react-icons/fa6';
+import { formatDateToColumn } from '@/lib/utils';
 
 
 const ActionMenu: React.FC = () => {
@@ -109,11 +110,7 @@ const PostsList = () => {
                                         className="hover:bg-gray-900 transition-colors duration-200"
                                     >
                                         <td className="py-3 px-2 text-sm text-gray-200">
-                                            {post.postedAt.toLocaleDateString('fr-FR', {
-                                                year: 'numeric',
-                                                month: '2-digit',
-                                                day: '2-digit',
-                                            })}
+                                            {formatDateToColumn(post.postedAt)}
                                         </td>
                                         <td className="py-3 px-2 text-sm text-white">
                                             {post.title}

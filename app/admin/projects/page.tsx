@@ -6,7 +6,6 @@ import { useAppwrite } from '@/hooks/useAppwrite';
 import { fetchProjects } from '@/lib/actions/projects';
 import Loader from '@/components/ui/Loader';
 import Link from 'next/link';
-import Image from 'next/image';
 
 
 function ProjectsList() {
@@ -37,9 +36,10 @@ function ProjectsList() {
                         <div
                             className="bg-gray-900 border-2 border-gray-800 rounded-2xl shadow-md hover:shadow-lg transition p-4 flex flex-col justify-between"
                         >
-                            <Image
+                            <img
                                 src={project.img}
                                 alt={project.title}
+
                                 className="w-full h-40 object-cover rounded-xl mb-4"
                             />
                             <div>
@@ -47,7 +47,7 @@ function ProjectsList() {
                                 <p className="text-gray-400 text-sm mb-4">{project.description}</p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.iconLists.map((icon: string, index: string) => (
-                                        <Image key={index} src={icon} alt="tech icon" className="w-6 h-6" />
+                                        <img key={index} src={icon} alt="tech icon" className="w-6 h-6" />
                                     ))}
                                 </div>
                             </div>

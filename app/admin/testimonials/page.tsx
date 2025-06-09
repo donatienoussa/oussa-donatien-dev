@@ -3,10 +3,8 @@
 import React from 'react';
 import { Plus, Trash2 } from 'lucide-react';
 import Link from 'next/link';
-
-// Si tu veux charger dynamiquement les témoignages plus tard
-// import { useAppwrite } from '@/hooks/useAppwrite';
-// import { fetchTestimonials } from '@/lib/actions/testimonials';
+import { useAppwrite } from '@/hooks/useAppwrite';
+import fetchTestimonials from "@/lib/actions/testimonials";
 
 const testimonials = [
     {
@@ -30,8 +28,7 @@ const testimonials = [
 ];
 
 export default function ListOfTestimonals() {
-    // Exemple pour chargement futur
-    // const { data: testimonials, loading } = useAppwrite({ fn: fetchTestimonials });
+    const { data: testimonials, loading } = useAppwrite({ fn: fetchTestimonials });
 
     // if (loading) return <Loader />;
     if (!testimonials || testimonials.length === 0) {
