@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
@@ -60,6 +61,17 @@ interface WorldProps {
   globeConfig: GlobeConfig;
   data: Position[];
 }
+
+type ArcData = {
+  startLat: number;
+  startLng: number;
+  endLat: number;
+  endLng: number;
+  color: string;
+  arcAlt: number;
+  order: number;
+};
+
 
 //let numbersOfRings = [0];
 
@@ -166,18 +178,19 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .arcsData(data)
-      .arcStartLat((d) => (d as { startLat: number }).startLat * 1)
-      .arcStartLng((d) => (d as { startLng: number }).startLng * 1)
-      .arcEndLat((d) => (d as { endLat: number }).endLat * 1)
-      .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
-      .arcColor((e: any) => (e as { color: string }).color)
-      .arcAltitude((e) => (e as { arcAlt: number }).arcAlt * 1)
+      .arcStartLat((d: object) => (d as ArcData).startLat)
+      .arcStartLng((d: object) => (d as ArcData).startLng)
+      .arcEndLat((d: object) => (d as ArcData).endLat)
+      .arcEndLng((d: object) => (d as ArcData).endLng)
+      .arcColor((d: object) => (d as ArcData).color)
+      .arcAltitude((d: object) => (d as ArcData).arcAlt)
       .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)])
+      .arcDashInitialGap((d: object) => (d as ArcData).order)
       .arcDashLength(defaultProps.arcLength)
-      .arcDashInitialGap((e) => (e as { order: number }).order * 1)
       .arcDashGap(15)
-      .arcDashAnimateTime(() => defaultProps.arcTime);
+      .arcDashAnimateTime(() => defaultProps.arcTime)
 
+    
     globeRef.current
       .pointsData(filteredPoints)
       .pointColor((e) => (e as { color: string }).color)
@@ -288,12 +301,12 @@ export function World(props: WorldProps) {
 }
 
 export function hexToRgb(hex: string) {
-  let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function (m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
       r: parseInt(result[1], 16),

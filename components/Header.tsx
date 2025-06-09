@@ -61,19 +61,20 @@ export function Header() {
                         ))}
                         <div className="flex w-full flex-col gap-4">
                             <NavbarButton
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                href="https://wa.me/+2290162140234"
                                 variant="primary"
-                                className="w-full"
+                                onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Github
+                                Whatsapp
                             </NavbarButton>
                             <NavbarButton
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                href="/CV-odb.pdf"
                                 variant="primary"
-                                className="w-full"
+                                onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Faire un appel
+                                Mon CV
                             </NavbarButton>
+                            
                         </div>
                     </MobileNavMenu>
                 </MobileNav>

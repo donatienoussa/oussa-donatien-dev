@@ -33,10 +33,10 @@ function RecentProjects() {
                         <div className="relative w-[280px] md:w-[300px] lg:w-[340px] aspect-[9/18] rounded-[2rem] border border-gray-700 shadow-xl bg-gradient-to-br from-zinc-900 to-black p-2">
 
                             {/* Capture d’écran */}
-                            <Image
+                            <img
                                 src={img}
                                 alt={title}
-                                className="w-full h-full object-cover rounded-[1.8rem] border-[6px] border-black"
+                                className="object-cover rounded-[1.8rem] border-[6px] border-black"
                             />
                         </div>
 
@@ -64,7 +64,13 @@ function RecentProjects() {
                                             key={index}
                                             className="border border-white/[0.2] rounded-full bg-black w-10 h-10 flex justify-center items-center -ml-2 first:ml-0"
                                         >
-                                            <img src={icon} alt={`icon-${index}`} className="p-2" />
+                                            <Image
+                                                src={icon}
+                                                alt={`icon-${index}`}
+                                                className="p-2"
+                                                width="200"
+                                                height="200"
+                                            />
                                         </div>
                                     ))}
                                 </div>

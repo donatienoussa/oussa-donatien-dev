@@ -32,7 +32,7 @@ const Testimonials = () => {
                 <InfiniteMovingCards
                     items={testimonials || []}
                     direction="left"
-                    speed='slow'
+                    speed='fast'
                 />
 
                 <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg: mt-10">
