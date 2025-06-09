@@ -6,29 +6,9 @@ import Link from 'next/link';
 import { useAppwrite } from '@/hooks/useAppwrite';
 import fetchTestimonials from "@/lib/actions/testimonials";
 
-const testimonials = [
-    {
-        quote:
-            "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-        name: "Michael Johnson",
-        title: "Director of AlphaStream Technologies",
-    },
-    {
-        quote:
-            "Working with Donatien has been transformative for our company. His ability to combine technical skill with strategic insight is rare and valuable.",
-        name: "Sophie Tremblay",
-        title: "CEO of NovaCorp",
-    },
-    {
-        quote:
-            "Donatien est un professionnel exceptionnel. Grâce à lui, notre projet a dépassé toutes nos attentes.",
-        name: "Yannick Ahouansou",
-        title: "Fondateur de Bénin Tech Hub",
-    },
-];
 
 export default function ListOfTestimonals() {
-    const { data: testimonials, loading } = useAppwrite({ fn: fetchTestimonials });
+    const { data: testimonials } = useAppwrite({ fn: fetchTestimonials });
 
     // if (loading) return <Loader />;
     if (!testimonials || testimonials.length === 0) {
