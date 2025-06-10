@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e2c7ea9-c999-400d-b3d5-bc4844197071" name="Changes" comment="" />
+    <list default="true" id="6e2c7ea9-c999-400d-b3d5-bc4844197071" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/hooks/use-mobile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/use-mobile.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,6 +74,7 @@
       <workItem from="1749212154756" duration="729000" />
       <workItem from="1749317129411" duration="1024000" />
       <workItem from="1749491334619" duration="147000" />
+      <workItem from="1749506126961" duration="12000" />
     </task>
     <servers />
   </component>

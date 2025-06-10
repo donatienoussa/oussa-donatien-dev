@@ -73,111 +73,43 @@ export const gridItems = [
 
 export const services = [
   {
-    id: "dev-app-mobile-sur-mesure",
-    title: "Développement d'application mobile sur mesure",
-    shortDescription: "Création d'applications iOS et Android personnalisées avec React Native.",
+    id: "dev-app-mobile-ia-fintech",
+    title: "Développement d’applications mobiles IA & FinTech sur mesure",
+    shortDescription:
+      "Applications iOS/Android personnalisées avec intégration d’IA (GPT, OCR) et services financiers (paiement, crypto, scoring).",
   },
   {
-    id: "maintenance-et-evolution-app-mobile",
-    title: "Maintenance et évolutions d'applications mobiles",
-    shortDescription: "Support, corrections de bugs et ajout de nouvelles fonctionnalités pour améliorer votre application.",
+    id: "integration-fonctionnalites-intelligentes",
+    title: "Intégration de fonctionnalités intelligentes dans vos apps",
+    shortDescription:
+      "Ajout de chatbots, génération de texte, analyse de documents ou de données grâce à l’intelligence artificielle embarquée.",
   },
   {
-    id: "integration-backend-api",
-    title: "Intégration backend et API pour applications mobiles",
-    shortDescription: "Développement d'API sécurisées et intégration avec Supabase ou NestJS.",
+    id: "mvp-mobile-rapide-ia-fintech",
+    title: "Conception rapide de MVP mobiles intelligents IA & FinTech",
+    shortDescription:
+      "Développement d’un prototype fonctionnel en 2 à 4 semaines pour tester votre idée sur mobile avec IA ou services financiers.",
   },
   {
-    id: "publication-sur-app-store-google-play",
-    title: "Publication d'applications sur App Store et Google Play",
-    shortDescription: "Accompagnement complet pour la mise en ligne et la conformité des apps.",
+    id: "maintenance-evolutions-app-mobile",
+    title: "Maintenance et évolutions techniques d'applications mobiles",
+    shortDescription:
+      "Corrections, optimisations et ajout de nouvelles fonctionnalités IA ou FinTech selon les retours utilisateurs et vos objectifs.",
   },
   {
-    id: "conseil-et-audit-technique-mobile",
-    title: "Conseil et audit technique pour projets mobiles",
-    shortDescription: "Analyse approfondie et recommandations pour améliorer vos apps mobiles.",
+    id: "publication-app-store-google-play",
+    title: "Publication d’applications sur App Store et Google Play Store",
+    shortDescription:
+      "Accompagnement complet à la mise en ligne, conformité RGPD, tests, icônes, visuels et optimisation pour les stores mobiles.",
+  },
+  {
+    id: "audit-technique-et-conseil-produit",
+    title: "Audit technique et conseil stratégique pour apps mobiles IA",
+    shortDescription:
+      "Évaluation UX, architecture, sécurité, IA embarquée et pistes d’évolution pour améliorer la valeur de votre application mobile.",
   }
 ];
 
-
-// export const projects = [
-//   {
-//     id: "aora-ai-content",
-//     title: "Aora - Générateur de contenu IA",
-//     shortDescription: "Application mobile IA pour générer automatiquement du contenu textuel.",
-//     description:
-//       "Aora est une application mobile qui utilise l'intelligence artificielle pour générer des contenus adaptés aux réseaux sociaux, blogs et newsletters. Elle propose des modèles optimisés, une interface intuitive et une intégration avec les plateformes de publication.",
-//     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-//     link: "/aora"
-//   },
-//   {
-//     id: "vidcash-video-reward",
-//     title: "VidCash - Gagnez en regardant des vidéos",
-//     video: "videos/exemple.mp4",
-//     poster: "/p1.svg",
-//     shortDescription: "Application de monétisation basée sur la visualisation de vidéos.",
-//     description:
-//       "VidCash permet aux utilisateurs de gagner des points en regardant des vidéos publicitaires. Ces points peuvent être échangés contre des récompenses ou des cryptomonnaies. L'application intègre un système anti-fraude et une interface engageante.",
-//     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg", "/supabase.svg"],
-//     link: "/vidcash"
-//   },
-//   {
-//     id: "payafrique-dapp",
-//     title: "PayAfrique - Paiement crypto simplifié",
-//     video: "videos/exemple.mp4",
-//     poster: "/p1.svg",
-//     shortDescription: "DApp de paiement mobile pour l'Afrique avec wallet crypto intégré.",
-//     description:
-//       "PayAfrique est une application mobile décentralisée qui facilite les paiements en cryptomonnaies. Elle inclut un portefeuille multi-chaines, une conversion automatique en monnaie locale et une interface conviviale adaptée aux besoins des utilisateurs africains.",
-//     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/ethers.svg", "/walletconnect.svg"],
-//     link: "/payafrique"
-//   },
-//   {
-//     id: "defiloan-app",
-//     title: "DeFiLoan - Prêts décentralisés",
-//     video: "videos/exemple.mp4",
-//     poster: "/p1.svg",
-//     shortDescription: "Application de microcrédit décentralisé basée sur la blockchain.",
-//     description:
-//       "DeFiLoan permet aux utilisateurs de contracter ou d’octroyer des prêts en crypto sans intermédiaire. Grâce aux smart contracts et à un scoring décentralisé, elle assure sécurité, transparence et rapidité dans les transactions de crédit.",
-//     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/solidity.svg", "/fm.svg"],
-//     link: "/defiloan"
-//   }
-// ];
-
-
-// export const testimonials = [
-//   {
-//     quote:
-//       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-//     name: "Michael Johnson1",
-//     title: "Director of AlphaStream Technologies",
-//   },
-//   {
-//     quote:
-//       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-//     name: "Michael Johnson2",
-//     title: "Director of AlphaStream Technologies",
-//   },
-//   {
-//     quote:
-//       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-//     name: "Michael Johnson3",
-//     title: "Director of AlphaStream Technologies",
-//   },
-//   {
-//     quote:
-//       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-//     name: "Michael Johnson4",
-//     title: "Director of AlphaStream Technologies",
-//   },
-//   {
-//     quote:
-//       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-//     name: "Michael Johnson5",
-//     title: "Director of AlphaStream Technologies",
-//   },
-// ];
 
 export const companies = [
   {
@@ -210,33 +142,35 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Débuts en développement web & autoformation",
-    desc: "Après une licence en Mathématiques et Informatique Générale, je me suis autoformé au développement web. J’ai réalisé plusieurs projets personnels et acquis de solides bases en programmation frontend.",
+    title: "Mathématiques & Systèmes d’Information",
+    desc: "J’ai obtenu une licence en Mathématiques à la FAST, puis une licence professionnelle en Systèmes d’Information à l’IFRI, où j’ai développé mes compétences en développement logiciel et architecture des systèmes.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Premières collaborations techniques",
-    desc: "Pendant ma dernière année de licence, j’ai collaboré avec mon professeur de programmation sur divers projets. Cette expérience m’a permis de structurer mon approche du code et de travailler en équipe sur des projets concrets.",
+    title: "Stage au Port Autonome de Cotonou – Projet informatique",
+    desc: "Lors de ma formation à l’IFRI, j’ai effectué un stage au Port Autonome de Cotonou. J’y ai conçu une application web interne, structuré mes premières solutions réelles et découvert les exigences du développement en entreprise.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Spécialisation en développement mobile",
-    desc: "Après une licence en Systèmes d’Information et Réseaux Informatiques, j’ai suivi une formation dédiée au développement mobile. J’y ai approfondi ma maîtrise de React Native et des bonnes pratiques liées aux apps multiplateformes.",
+    title: "Spécialisation mobile & IA – React Native, Supabase, GPT",
+    desc: "Je me suis spécialisé en développement mobile multiplateforme (React Native) avec backend (Supabase, NestJS). J’ai aussi été formé à l’IA appliquée (NLP, OCR, LLM) par Africa Tech Up Tour pour enrichir mes projets mobiles.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Développeur Mobile Freelance & en entreprise",
-    desc: "Aujourd’hui, je conçois et développe des applications mobiles multiplateformes (iOS & Android), que ce soit en freelance ou en entreprise. J’interviens sur tout le cycle produit : UI/UX, intégration, performance et déploiement.",
+    title: "Développeur freelance : IA & FinTech au cœur du mobile",
+    desc: "Aujourd’hui, je conçois des apps mobiles intelligentes, intégrant IA (GPT, génération) et FinTech (paiement, crypto). J’interviens sur tout le cycle produit : de l’idée au déploiement sur les stores, en freelance ou en mission.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
 ];
+
+
 
 
 export const socialMedia = [

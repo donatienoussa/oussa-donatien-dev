@@ -50,7 +50,7 @@ function Hero() {
                     />
 
                     <p className='text-center  md:tracking-wider mb-4 text-sm  md:text-lg lg-text-2xl text-white'>
-                        Je suis développeur mobile fullstack, créateur d &apos; applications iOS & Android sur mesure
+                        Je conçois des applications mobiles intelligentes pour les startups et PME du secteur FinTech et IA
                     </p>
 
 
