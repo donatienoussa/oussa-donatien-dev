@@ -10,7 +10,7 @@ export function Services() {
   return (
     <div id="services" className="py-5">
       
-      <Title title="2. Mes Services" />
+      <Title title={`2. Mes  services`} />
       <Quote
         quote={"« La qualité d’un service se mesure à ce que l’on fait quand personne ne regarde. »"}
         author={"— Henry Ford"}

@@ -21,7 +21,7 @@ const Testimonials = () => {
     
     return (
         <div id="testimonials" className='py-4 text-white'>
-            <Title title="4. Ce que disent mes clients" />
+            <Title title="4. Ce  que  disent  mes  clients" />
             <Quote
                 quote={"« Ce que vous faites fait une différence. À vous de choisir laquelle. »"}
                 author={"— Jane Goodall"}

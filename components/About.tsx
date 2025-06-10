@@ -8,7 +8,7 @@ const About = () => {
 
     return (
         <section id="about">
-            <Title title="1. À propos de moi" />
+            <Title title={`1. À  propos  de  moi`} />
             <Quote
                 quote={"« Choisis un travail que tu aimes, et tu n’auras pas à travailler un seul jour de ta vie. »"}
                 author={"— Confucius"}

@@ -9,7 +9,7 @@ import { FaLocationArrow } from 'react-icons/fa6'
 function Hero() {
   
     return (
-        <div className='pb-20 pt-0'>
+        <div className='pb-20 pt-0 b'>
             <div>
                 <Spotlight
                     className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"

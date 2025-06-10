@@ -11,13 +11,13 @@ import Image from 'next/image'
 function RecentProjects() {
     const { data: projects } = useAppwrite({
         fn: fetchProjects
-    });
+    })
 
     if (!projects) return <p className="text-center text-white">Pas de projets</p>
 
     return (
         <div id="projects" className="py-16 text-white">
-            <Title title="3. Projets récents" />
+            <Title title="3. Projets  récents" />
              <Quote
                 quote={"« Il ne savait pas que c’était impossible, alors il l’a fait. »"}
                 author={"— Mark Twain"}
@@ -41,7 +41,7 @@ function RecentProjects() {
                         </div>
 
                         {/* Détails projet */}
-                        <div className="sm:px-5 flex-1 space-y-4 max-w-xl">
+                        <div className="sm:px-5 flex-1  space-y-4 max-w-xl">
                             <h1 className="font-bold text-2xl lg:text-3xl line-clamp-1">{title}</h1>
                             <p className="text-sm lg:text-base text-gray-300">
                                 {description}

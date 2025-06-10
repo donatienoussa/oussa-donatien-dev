@@ -8,7 +8,7 @@ import CustomLink from './Link';
 function Footer() {
   
     return (
-        <footer id="contact" className="w-full pt-5 pb-2  text-white">
+        <footer id="contact" className="w-full md:pt-5 pt-70 pb-2  text-white">
             {/* <div className="w-full h-30 relative left-0">
                 <Image 
                     src="/footer-grid.svg"
