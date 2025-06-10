@@ -27,9 +27,10 @@ function Footer() {
                 <p className="text-white-200 md:mt-10 my-5 text-center">
                     Contactez-moi dès aujourd’hui et discutons de la façon dont je peux vous aider à atteindre vos objectifs ! 
                 </p>
-                <div className="md:flex justify-center items-center gap-5">
+                <div className="flex flex-wrap justify-center items-center gap-5">
                     <CustomLink
                         href="mailto:donatienoussaodb@gmail.com"
+                        className="sm:mb-5"
                     >
                         <MagicButton
                             title="Écrivez-moi sur Gmail"
@@ -40,6 +41,7 @@ function Footer() {
 
                     <CustomLink
                         href="https://wa.me/+2290162140234"
+                        className="sm:mb-5"
                     >
                         <MagicButton
                             title="Ecrivez-moi sur whatsapp"

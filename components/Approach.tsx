@@ -16,13 +16,13 @@ function Approach() {
                 author={"— Donatien OUSSA"}
             />
 
-            <div className="my-20 flex flex-wrap items-center justify-center gap-6 w-full">
+            <div className="my-20 flex flex-wrap items-center justify-center gap-6 w-full h-[700px]">
                 {/** Phase 1 */}
                 <Card
                     title="Phase 1 : Vision Produit & Spécification"
                     icon={<AceternityIcon order="Phase 1" />}
                     description="J'organise des ateliers d’idéation avec le client pour définir le backlog initial. À l’aide de user stories et EPICs, je clarifie les attentes métier, les rôles utilisateurs, et prépare les fondations du projet en collaboration avec le Product Owner."
-                    bgColor="bg-emerald-900"
+                    bgColor="bg-emerald-900" 
                 />
 
                 {/** Phase 2 */}
