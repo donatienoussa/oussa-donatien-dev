@@ -16,7 +16,7 @@ export function Services() {
         author={"— Henry Ford"}
       />
       
-      <div className="grid grid-cols-1 md:p-20 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="z-100 grid grid-cols-1 md:p-20 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services
           .map(service => (
             <BackgroundGradient
@@ -30,9 +30,9 @@ export function Services() {
                 {service.shortDescription}
               </p>
               <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-                <a>Mes</a>
+                <a>@</a>
                 <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                  Services
+                  {service.type}
                 </span>
               </button>
             </BackgroundGradient>

@@ -16,7 +16,7 @@ function RecentProjects() {
     if (!projects) return <p className="text-center text-white">Pas de projets</p>
 
     return (
-        <div id="projects" className="py-16 text-white">
+        <div id="projects" className="py-16">
             <Title title="3. Projets  récents" />
              <Quote
                 quote={"« Il ne savait pas que c’était impossible, alors il l’a fait. »"}
@@ -43,7 +43,7 @@ function RecentProjects() {
                         {/* Détails projet */}
                         <div className="sm:px-5 flex-1  space-y-4 max-w-xl">
                             <h1 className="font-bold text-2xl lg:text-3xl line-clamp-1">{title}</h1>
-                            <p className="text-sm lg:text-base text-gray-300">
+                            <p className="text-sm lg:text-base">
                                 {description}
                             </p>
 
@@ -80,7 +80,7 @@ function RecentProjects() {
                                     href={link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 text-purple-300 hover:text-purple-400 transition"
+                                    className="flex items-center gap-3 hover:text-purple-400 transition"
                                 >
                                     <p className="text-sm lg:text-base">Télécharger</p>
                                     <FaLocationArrow size={18} />

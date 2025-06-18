@@ -1,52 +1,87 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
 
-/* Ajout des variables de couleurs pour le thème */
+/* Variables light mode par défaut */
 :root {
   --black: #000;
   --black-100: #000319;
   --black-200: rgba(17, 25, 40, 0.75);
   --black-300: rgba(255, 255, 255, 0.125);
 
-  --white: #FFF;
+  --white: #fff;
   --white-100: #BEC1DD;
   --white-200: #C1C2D3;
 
   --blue-100: #E4ECFF;
-
   --purple: #CBACF9;
 
-  --border: hsl(var(--border));
-  --input: hsl(var(--input));
-  --ring: hsl(var(--ring));
-  --background: hsl(var(--background));
-  --foreground: hsl(var(--foreground));
+  /* Light mode colors */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
 
-  --primary: hsl(var(--primary));
-  --primary-foreground: hsl(var(--primary-foreground));
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
 
-  --secondary: hsl(var(--secondary));
-  --secondary-foreground: hsl(var(--secondary-foreground));
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
 
-  --destructive: hsl(var(--destructive));
-  --destructive-foreground: hsl(var(--destructive-foreground));
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
 
-  --muted: hsl(var(--muted));
-  --muted-foreground: hsl(var(--muted-foreground));
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
 
-  --accent: hsl(var(--accent));
-  --accent-foreground: hsl(var(--accent-foreground));
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 100%;
 
-  --popover: hsl(var(--popover));
-  --popover-foreground: hsl(var(--popover-foreground));
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
 
-  --card: hsl(var(--card));
-  --card-foreground: hsl(var(--card-foreground));
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+
+  --ring: 240 5% 64.9%;
+}
+
+/* Dark mode via .dark class ou [data-theme="dark"] */
+.dark,
+[data-theme="dark"] {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+
+  --ring: 240 3.7% 15.9%;
 }
 
 @theme inline {
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
-
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
 
   --shadow-input:
@@ -60,7 +95,6 @@
     }
   }
 }
-
 
 @font-face {
   font-family: 'Funnel Display';
@@ -82,13 +116,11 @@
   }
 }
 
-
 /* Style pour les conteneurs */
 .container {
   @apply mx-auto px-8;
   max-width: 100%;
 }
-
 @media (min-width: 1536px) {
   .container {
     max-width: 1400px;
@@ -99,34 +131,22 @@
 .rounded-lg {
   border-radius: var(--radius);
 }
-
 .rounded-md {
   border-radius: calc(var(--radius) - 2px);
 }
-
 .rounded-sm {
   border-radius: calc(var(--radius) - 4px);
 }
 
 /* Animations */
 @keyframes accordion-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
 }
-
 @keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
-  }
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
 }
-
 @keyframes spotlight {
   0% {
     opacity: 0;
@@ -137,104 +157,43 @@
     transform: translate(-50%, -40%) scale(1);
   }
 }
-
 @keyframes shimmer {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -200% 0;
-  }
+  from { background-position: 0 0; }
+  to { background-position: -200% 0; }
 }
-
 @keyframes moveHorizontal {
-  0% {
-    transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    transform: translateX(50%) translateY(10%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-10%);
-  }
+  0% { transform: translateX(-50%) translateY(-10%); }
+  50% { transform: translateX(50%) translateY(10%); }
+  100% { transform: translateX(-50%) translateY(-10%); }
 }
-
 @keyframes moveInCircle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
 }
-
 @keyframes moveVertical {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+  0% { transform: translateY(-50%); }
+  50% { transform: translateY(50%); }
+  100% { transform: translateY(-50%); }
 }
-
 @keyframes scroll {
-  to {
-    transform: translate(calc(-50% - 0.5rem));
-  }
+  to { transform: translate(calc(-50% - 0.5rem)); }
 }
 
 /* Animations applicables */
-.animation-accordion-down {
-  animation: accordion-down 0.2s ease-out;
-}
-
-.animation-accordion-up {
-  animation: accordion-up 0.2s ease-out;
-}
-
-.animation-spotlight {
-  animation: spotlight 2s ease .75s 1 forwards;
-}
-
-.animation-shimmer {
-  animation: shimmer 2s linear infinite;
-}
-
-.animation-first {
-  animation: moveVertical 30s ease infinite;
-}
-
-.animation-second {
-  animation: moveInCircle 20s reverse infinite;
-}
-
-.animation-third {
-  animation: moveInCircle 40s linear infinite;
-}
-
-.animation-fourth {
-  animation: moveHorizontal 40s ease infinite;
-}
-
-.animation-fifth {
-  animation: moveInCircle 20s ease infinite;
-}
-
-.animation-scroll {
-  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
-}
-
+.animation-accordion-down { animation: accordion-down 0.2s ease-out; }
+.animation-accordion-up { animation: accordion-up 0.2s ease-out; }
+.animation-spotlight { animation: spotlight 2s ease .75s 1 forwards; }
+.animation-shimmer { animation: shimmer 2s linear infinite; }
+.animation-first { animation: moveVertical 30s ease infinite; }
+.animation-second { animation: moveInCircle 20s reverse infinite; }
+.animation-third { animation: moveInCircle 40s linear infinite; }
+.animation-fourth { animation: moveHorizontal 40s ease infinite; }
+.animation-fifth { animation: moveInCircle 20s ease infinite; }
+.animation-scroll { animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite; }
 
 @layer utilities {
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
   }
 }
-
-

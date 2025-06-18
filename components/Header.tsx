@@ -13,6 +13,7 @@ import {
 import { navItems } from "@/data";
 import Link from "next/link";
 import { useState } from "react";
+import { ModeToggle } from "./ui/ModeToggle";
 
 export function Header() {
    
@@ -32,6 +33,11 @@ export function Header() {
                         <NavbarButton href="/CV-odb.pdf"  variant="primary">
                             Mon CV
                         </NavbarButton>
+                        
+                        <NavbarButton href="#" variant="secondary">
+                            <ModeToggle />
+                        </NavbarButton>
+                        
                     </div>
                 </NavBody>
 
@@ -39,10 +45,18 @@ export function Header() {
                 <MobileNav>
                     <MobileNavHeader>
                         <NavbarLogo />
-                        <MobileNavToggle
-                            isOpen={isMobileMenuOpen}
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        />
+
+                        
+                        <div className="ml-0  flex justify-center items-center">
+                            <NavbarButton href="#" variant="secondary">
+                                <ModeToggle />
+                            </NavbarButton>
+
+                            <MobileNavToggle
+                                isOpen={isMobileMenuOpen}
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            />
+                        </div>
                     </MobileNavHeader>
 
                     <MobileNavMenu

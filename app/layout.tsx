@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "../style/globals.css";
 import { UserProvider } from "@/context/UserContext";
-
-
+import { ThemeProvider } from "@/components/theme-provider";
 export const metadata: Metadata = {
   title: "Donatien's Portfolio",
-  description: "Mobile Apps developper",
+  description: "Apps developper",
 };
 
 
@@ -15,12 +14,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body>
-        <UserProvider>
-          {children}   
-        </UserProvider>
-      </body>
-    </html>
+    <>
+      <html className="scroll-smooth" lang="fr" suppressHydrationWarning>
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <UserProvider>
+            {children}
+            </UserProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   );
 }
