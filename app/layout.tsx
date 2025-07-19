@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "../style/globals.css";
 import { UserProvider } from "@/context/UserContext";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+
+
 export const metadata: Metadata = {
   title: "Donatien's Portfolio",
   description: "Apps developper",
@@ -24,7 +27,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <UserProvider>
-            {children}
+              {children}
+              <Toaster />
             </UserProvider>
           </ThemeProvider>
         </body>

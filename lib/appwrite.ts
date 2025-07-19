@@ -9,6 +9,8 @@ export const config = {
     testimonialCollectionId: process.env.NEXT_PUBLIC_APPWRITE_TESTIMONIAL_COLLECTION_ID!,
     postCollectionId: process.env.NEXT_PUBLIC_APPWRITE_POST_COLLECTION_ID!,
     mediaBucketId: process.env.NEXT_PUBLIC_APPWRITE_MEDIA_BUCKET_ID!,
+    serviceCollectionId: process.env.NEXT_PUBLIC_APPWRITE_SERVICE_COLLECTION_ID!,
+    techCollectionId: process.env.NEXT_PUBLIC_APPWRITE_TECH_COLLECTION_ID!
 }
 
 export const client = new Client()

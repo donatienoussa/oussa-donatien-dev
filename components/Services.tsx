@@ -2,25 +2,48 @@
 
 import React from "react";
 import { BackgroundGradient } from "./ui/background-gradient";
-import { services } from "@/data";
 import { Title } from "./ui/Title";
 import { Quote } from "./Quote";
+import { useAppwrite } from "@/hooks/useAppwrite";
+import { fetchServices } from "@/lib/actions/services";
+import { ServicesSheet } from "./ui/ServicesSheet";
 
 export function Services() {
+
+  const { data: services, loading } = useAppwrite({
+    fn: fetchServices
+  });
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <p className="text-gray-500">Chargement des services...</p>
+      </div>
+    );
+  }
+
+  if (!services) {
+    return (
+      <div className="flex justify-center items-center h-64">
+        <p className="text-gray-500">Aucun service disponible</p>
+      </div>
+    );
+  }
+
   return (
-    <div id="services" className="py-5">
-      
+    <div id="services" className="py-15">
+
       <Title title={`2. Mes  services`} />
       <Quote
         quote={"« La qualité d’un service se mesure à ce que l’on fait quand personne ne regarde. »"}
         author={"— Henry Ford"}
       />
-      
+
       <div className="z-100 grid grid-cols-1 md:p-20 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services
-          .map(service => (
+          .map((service, index) => (
             <BackgroundGradient
-              key={service.id}
+              key={service.id ?? index}
               className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900"
             >
               <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
@@ -38,7 +61,10 @@ export function Services() {
             </BackgroundGradient>
           ))}
       </div>
+       <div className="flex items-center justify-end mt-5 mr:5 md:mr-20 ">
+          <ServicesSheet />
+        </div>
     </div>
-    
+
   );
 }

@@ -1,6 +1,5 @@
 "use client"
 
-
 import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
@@ -11,12 +10,12 @@ import Testimonials from "@/components/Testimonials";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
-  
   return (
-    <div>     
-      {/** La grille */}
+    <div className="relative z-0">
+      {/* Grille en arrière-plan */}
       <div
-        className="fixed top-0 left-0 flex h-screen w-full items-center justify-center bg-white text-black dark:bg-black dark:text-white"
+        className="pointer-events-none fixed inset-0 -z-10"
+        aria-hidden="true"
       >
         <div
           className={cn(
@@ -26,9 +25,12 @@ export default function Home() {
             "dark:[background-image:linear-gradient(to_right,#141111FF_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
           )}
         />
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-      </div> 
+        <div className="absolute inset-0 bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+      </div>
       
+      
+      
+      {/* Contenu principal */}
       <Hero />
       <About />
       <Services />

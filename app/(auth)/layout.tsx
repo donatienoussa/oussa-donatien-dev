@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import React, { ReactNode } from 'react'
+import Image from 'next/image'
 
 const AuthLayout = async ({ children }: { children: ReactNode }) => {
 
@@ -11,7 +11,12 @@ const AuthLayout = async ({ children }: { children: ReactNode }) => {
                 <div className="w-full max-w-md space-y-10">
                     {/* Logo + titre */}
                     <div className="flex items-center gap-3">
-                        <Image src="/logo.svg" alt="logo" width={37} height={37} />
+                        <Image
+                            src="/logo.png"
+                            alt="logo"
+                            width={37}
+                            height={37}
+                        />
                         <h1 className="text-2xl font-semibold text-white">OUSSA Donatien</h1>
                     </div>
 
@@ -22,7 +27,7 @@ const AuthLayout = async ({ children }: { children: ReactNode }) => {
 
             {/* Section illustration (droite) */}
             <section className="hidden md:block w-1/2">
-                <Image
+                <img
                     src="/profile.jpg"
                     alt="auth illustration"
                     className="w-full h-full object-cover"

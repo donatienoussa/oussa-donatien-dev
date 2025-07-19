@@ -4,8 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e2c7ea9-c999-400d-b3d5-bc4844197071" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/hooks/use-mobile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/use-mobile.ts" afterDir="false" />
+    <list default="true" id="95e1a52f-8c2d-46c3-89cb-51f155f7dd12" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(app)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/projects/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/projects/create/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/projects/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/global-error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/About.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Experience.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/RecentProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/RecentProjects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Services.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Testimonials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/BentoGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/BentoGrid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/MagicButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/MagicButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/NavLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/NavLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TextGenerateEffect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/TextGenerateEffect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useAppwrite.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useAppwrite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instrumentation-client.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instrumentation.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/actions/files.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/actions/files.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/actions/projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/actions/projects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/appwrite.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/appwrite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/validation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentry.edge.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentry.server.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +48,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;donatienoussa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/donatienoussa/oussa-donatien-dev.git&quot;,
+    &quot;accountId&quot;: &quot;e167a944-6195-4663-8597-474d75f88605&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2wjJh8kcQ4q9WQJls6gagE0GNpt" />
+  <component name="ProjectId" id="2z1EoXWz7jiNI9EUs2df1uHKtxt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,6 +83,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/oussa/workflow/NextJS/oussa-donatien/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -59,22 +106,22 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6e2c7ea9-c999-400d-b3d5-bc4844197071" name="Changes" comment="" />
-      <created>1746549176444</created>
+      <changelist id="95e1a52f-8c2d-46c3-89cb-51f155f7dd12" name="Changes" comment="" />
+      <created>1750890375548</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1746549176444</updated>
-      <workItem from="1746549190495" duration="165000" />
-      <workItem from="1749212154756" duration="729000" />
-      <workItem from="1749317129411" duration="1024000" />
-      <workItem from="1749491334619" duration="147000" />
-      <workItem from="1749506126961" duration="12000" />
+      <updated>1750890375548</updated>
+      <workItem from="1750890398596" duration="104000" />
+      <workItem from="1750892166176" duration="3168000" />
+      <workItem from="1751046730870" duration="1184000" />
+      <workItem from="1751048989162" duration="1960000" />
+      <workItem from="1751051870167" duration="229000" />
     </task>
     <servers />
   </component>

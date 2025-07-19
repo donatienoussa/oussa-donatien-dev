@@ -9,7 +9,7 @@ import { Quote } from "./Quote";
 
 function Approach() {
     return (
-        <section className="w-full py-20 text-white">
+        <section className="w-full py-20">
             <Title title="6. Ma méthode de travail" />
             <Quote
                 quote={"« Une bonne organisation transforme une idée en résultat, un rêve en produit, et une équipe en moteur de réussite. »"}
@@ -19,7 +19,7 @@ function Approach() {
             <div className="my-20 flex flex-wrap items-center justify-center gap-6 w-full h-[700px]">
                 {/** Phase 1 */}
                 <Card
-                    title="Phase 1 : Vision Produit & Spécification"
+                    title="Vision Produit & Spécification"
                     icon={<AceternityIcon order="Phase 1" />}
                     description="J'organise des ateliers d’idéation avec le client pour définir le backlog initial. À l’aide de user stories et EPICs, je clarifie les attentes métier, les rôles utilisateurs, et prépare les fondations du projet en collaboration avec le Product Owner."
                     bgColor="bg-emerald-900" 
@@ -27,7 +27,7 @@ function Approach() {
 
                 {/** Phase 2 */}
                 <Card
-                    title="Phase 2 : Design, Architecture & Prototypage"
+                    title="Design, Architecture & Prototypage"
                     icon={<AceternityIcon order="Phase 2" />}
                     description="Je conçois l'UX avec des wireframes validés rapidement par le client, puis j’élabore les maquettes UI. En parallèle, je prépare l’architecture technique et les spécifications fonctionnelles afin d’assurer un développement fluide, sécurisé et scalable."
                     bgColor="bg-sky-600"
@@ -35,10 +35,10 @@ function Approach() {
 
                 {/** Phase 3 */}
                 <Card
-                    title="Phase 3 : Développement Agile & Livraison Continue"
+                    title="Développement Agile & Livraison Continue"
                     icon={<AceternityIcon order="Phase 3" />}
                     description="J’implémente les fonctionnalités par sprints, avec tests automatisés, gestion multilingue et intégration de contenu. Les livrables sont validés en continu et déployés progressivement pour garantir qualité, performance et satisfaction utilisateur."
-                    bgColor="bg-black"
+                    bgColor="bg-purple-300"
                     extraOverlay
                 />
             </div>

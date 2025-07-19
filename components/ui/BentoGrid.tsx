@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
@@ -53,9 +53,20 @@ export const BentoGridItem = ({
     spareImg?: string;
 }) => {
     const leftLists = ["Next.js", "Expo", "Typescript"];
-    const rightLists = ["Nativewind", "Supabase", "Appwrite"];
+    const rightLists = ["Nativewind", "Supabase", "Nest.js"];
 
     const [copied, setCopied] = useState(false);
+
+    //S i l'utilisateur clique sur le bouton de copie, on change l'état copied à true 
+    // et après 2 secondes, on le remet à false 
+    useEffect(() => {
+        setTimeout(() => {
+            if (copied) {
+                setCopied(false);
+            }
+        }, 10000);
+    })
+
 
     const defaultOptions = {
         loop: copied,
@@ -177,7 +188,7 @@ export const BentoGridItem = ({
                                 icon={<IoCopyOutline />}
                                 position="left"
                                 handleClick={handleCopy}
-                                otherStyles="bg-gray-100 dark:bg-[#161A31] text-black dark:text-white"
+                                otherStyles=""
                             />
                         </div>
                     )}

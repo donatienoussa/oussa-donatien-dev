@@ -6,7 +6,20 @@ import Link from 'next/link';
 import { formatDateToColumn } from '@/lib/utils';
 
 export default function Blog() {
-  const { data: posts } = useAppwrite({ fn: fetchPosts });
+  const { data: posts, loading } = useAppwrite({
+    fn: fetchPosts,
+    params: {
+      isDraft: false 
+    },
+  });
+
+  if (loading) {
+    return (
+      <div className="py-20 text-center">
+        <p className="text-lg text-gray-500 dark:text-gray-400">Chargement des posts…</p>
+      </div>
+    );
+  }
 
   if (!posts || posts.length === 0) {
     return (

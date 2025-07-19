@@ -7,9 +7,7 @@ import {
     useScroll,
     useMotionValueEvent,
 } from "motion/react";
-import Image from "next/image";
 import Link from "next/link";
-
 import React, { useRef, useState } from "react";
 
 
@@ -237,12 +235,6 @@ export const NavbarLogo = () => {
             href="/"
             className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 font-normal text-black"
         >
-            {/* <Image
-                src="/logo.png"
-                alt="logo"
-                width={170}
-                height={130}
-            /> */}
             <p className="font-medium text-black dark:text-white">Donatien OUSSA</p>
         </Link>
     );

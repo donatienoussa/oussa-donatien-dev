@@ -8,7 +8,7 @@ import CustomLink from './Link';
 function Footer() {
   
     return (
-        <footer id="contact" className="w-full md:pt-5 pt-70 pb-2  text-white">
+        <footer id="contact" className="relative z-0 w-full md:pt-5 pt-70 pb-2">
             {/* <div className="w-full h-30 relative left-0">
                 <Image 
                     src="/footer-grid.svg"
@@ -19,7 +19,7 @@ function Footer() {
                 />
             </div> */}
 
-            <div className='flex flex-col items-center justify-center '>
+            <div className='z-10 flex flex-col items-center justify-center '>
                 <h1 className="heading lg:max-w-[45vw]">
                     Prêt à faire passer {``}  
                     <span className="text-purple-600">votre</span> présence numérique au niveau supérieur ?
@@ -62,7 +62,7 @@ function Footer() {
                     {socialMedia.map((profile) => (
                         <div
                             key={profile.id}
-                            className='h-10 w-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-80 bg-black-200 rounded-lg border border-black-300'
+                            className='bg-black rounded-full h-10 w-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-80 bg-black-200 border border-black-300'
                         >
                             <CustomLink href={profile.link} target="_blank">
                                 <Image

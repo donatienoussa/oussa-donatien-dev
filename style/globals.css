@@ -196,4 +196,25 @@
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
   }
+
+  .border-image {
+    border-image: url("/public/app.svg") 30 round;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-0.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+  
 }
+

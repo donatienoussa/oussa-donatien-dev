@@ -1,3 +1,12 @@
+import {
+  FiBox,
+  FiLayers,
+  FiMessageCircle,
+  FiFileText,
+} from 'react-icons/fi'
+
+
+
 export const navItems = [
   { name: "À Propos", link: "#about" },
   { name: "Services", link: "#services" },
@@ -7,12 +16,60 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
+export const dashbordMenuItems = [
+  {
+    title: 'Services',
+    icon: <FiBox />,
+    key: 'services',
+    links: [
+      { href: '/admin/services', label: 'Liste des services' },
+      { href: '/admin/services/create', label: 'Ajouter un service' },
+    ],
+  },
+  {
+    title: 'Projets',
+    icon: <FiLayers />,
+    key: 'projects',
+    links: [
+      { href: '/admin/projects', label: 'Liste des projets' },
+      { href: '/admin/projects/create', label: 'Ajouter un projet' },
+    ],
+  },
+  {
+    title: 'Blog',
+    icon: <FiFileText />,
+    key: 'blog',
+    links: [
+      { href: '/admin/blog', label: 'Articles' },
+      { href: '/admin/blog/create', label: 'Ajouter un article' },
+    ],
+  },
+  {
+    title: 'Témoignages',
+    icon: <FiMessageCircle />,
+    key: 'testimonials',
+    links: [
+      { href: '/admin/testimonials', label: 'Liste des témoignages' },
+      { href: '/admin/testimonials/create', label: 'Ajouter un témoignage' },
+    ],
+  },
+  {
+    title: 'Technologies',
+    icon: <FiBox />,
+    key: 'technologies',
+    links: [
+      { href: '/admin/technologies', label: 'Liste des technologies' },
+      { href: '/admin/technologies/create', label: 'Ajouter une technologie' },
+    ],
+  },
+]
+
 export const gridItems = [
   {
     id: 1,
     title: "Je privilégie la collaboration avec les clients en favorisant une communication ouverte.",
     description: "",
-    className: "bg-white  lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+    className: "bg-white lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "text-white justify-end",
     img: "/b1.svg",
@@ -22,7 +79,7 @@ export const gridItems = [
     id: 2,
     title: "Je suis flexible sur les fuseaux horaires",
     description: "",
-    className: "bg-white lg:col-span-2 md:col-span-3 md:row-span-2",
+    className: "bg-white border-2 lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
     img: "",
@@ -63,7 +120,7 @@ export const gridItems = [
     id: 6,
     title: "Seriez-vous disposé(e) à initier une collaboration sur un projet ?",
     description: "",
-    className: "bg-white lg:col-span-2 md:col-span-3 md:row-span-1",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "text-white justify-center md:max-w-full max-w-60 text-center",
     img: "",
@@ -77,44 +134,100 @@ export const services = [
     title: "Développement web & mobile sur mesure",
     shortDescription:
       "Applications web (Next.js) et mobiles (React Native) rapides, modernes et adaptées à vos besoins métier.",
+    description:
+      "Transformez vos idées en applications fluides, sécurisées et performantes. Nous concevons sur mesure des plateformes web et mobiles adaptées à votre activité, en mettant l’accent sur l’expérience utilisateur et les performances techniques.",
     type: "fullstack",
+    listOfSubServices: [
+      "Développement avec Next.js",
+      "Développement mobile avec React Native",
+      "Optimisation des performances",
+      "Responsive design",
+    ],
+    show: true,
   },
   {
     id: "dev-ia-fintech",
     title: "Applications intelligentes IA & FinTech",
     shortDescription:
       "Ajout de fonctionnalités IA (chatbots, OCR, analyse) et FinTech (paiement, scoring, crypto) à vos apps.",
+    description:
+      "Offrez une expérience innovante à vos utilisateurs grâce à l’intelligence artificielle et à la FinTech. Chatbots, traitement automatique de documents ou encore intégration de paiements intelligents : votre app gagne en valeur, en efficacité et en attractivité.",
     type: "mobile",
+    listOfSubServices: [
+      "Intégration de chatbots",
+      "Reconnaissance de texte (OCR)",
+      "Systèmes de scoring IA",
+      "Paiement en ligne",
+      "Paiement crypto",
+    ],
+    show: true,
   },
   {
     id: "backend-api",
     title: "API & backends sécurisés et fluides",
     shortDescription:
       "Développement d’API REST/GraphQL et backends robustes avec NestJS, Supabase ou Appwrite.",
+    description:
+      "Vos applications reposent sur un moteur invisible : le backend. Je construis des fondations solides, extensibles et sécurisées pour vos projets, avec une gestion efficace des données, de l’authentification et des permissions.",
     type: "backend",
+    listOfSubServices: [
+      "API REST & GraphQL",
+      "Backends avec NestJS",
+      "Authentification sécurisée",
+      "Stockage Supabase",
+      "Stockage Appwrite",
+    ],
+    show: true,
   },
   {
     id: "cms-portail",
     title: "CMS Headless & portails personnalisés",
     shortDescription:
       "Systèmes de gestion de contenu sur mesure avec Strapi, Next.js ou Appwrite, adaptés aux collectivités ou entreprises.",
+    description:
+      "Offrez à vos équipes un outil de gestion de contenu simple et puissant. Idéal pour les blogs, intranets, portails ou sites éditoriaux, un CMS headless permet une liberté totale côté design et une gestion structurée du contenu côté administration.",
     type: "web",
+    listOfSubServices: [
+      "CMS Headless avec Strapi",
+      "Portails personnalisés avec Next.js ou Appwrite",
+      "Gestion multi-utilisateurs",
+      "Rôles & permissions",
+    ],
+    show: true,
   },
   {
     id: "mvp-prototypage",
     title: "Prototypage rapide & MVP",
     shortDescription:
-      "Conception rapide d’un MVP complet (web ou mobile) en 2 à 3 semaines pour valider votre idée ou pour l'améliorer",
+      "Conception rapide d’un MVP complet (web ou mobile) en 2 à 3 semaines pour valider votre idée ou pour l'améliorer.",
+    description:
+      "Vous avez une idée, un projet ou un besoin à valider ? Je conçois un prototype fonctionnel ou un MVP qui vous permet d’obtenir des retours concrets, tester votre marché ou convaincre des investisseurs.",
     type: "fullstack",
+    listOfSubServices: [
+      "Wireframes & maquettes",
+      "Développement MVP (web ou mobile)",
+      "Déploiement rapide",
+      "Tests utilisateurs",
+    ],
+    show: true,
   },
   {
     id: "maintenance-evolution",
     title: "Maintenance, audit & évolutions techniques",
     shortDescription:
-      "Suivi technique, correctifs, évolutions IA/FinTech, migration vers une stack moderne, robuste et évolutif",
+      "Suivi technique, correctifs, évolutions IA/FinTech, migration vers une stack moderne, robuste et évolutive.",
+    description:
+      "Je vous accompagne sur la durée pour maintenir, sécuriser et faire évoluer vos solutions. Cela inclut la correction de bugs, l’optimisation de performance, ou encore la migration vers une nouvelle technologie pour garantir longévité et scalabilité.",
     type: "support",
+    listOfSubServices: [
+      "Maintenance continue",
+      "Audits de sécurité & performance",
+      "Refactoring technique",
+      "Migration vers une stack moderne",
+    ],
+    show: true,
   },
-];
+]
 
 
 export const companies = [
@@ -141,7 +254,7 @@ export const companies = [
   {
     id: 5,
     name: "GitHub",
-    img: "/git.svg",
+    img: "/git.png",
   },
 ];
 
@@ -177,12 +290,10 @@ export const workExperience = [
 ];
 
 
-
-
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    img: "/git.png",
     link: 'https://github.com/donatienoussa'
   },
   {

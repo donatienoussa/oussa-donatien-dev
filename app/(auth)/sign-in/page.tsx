@@ -1,7 +1,7 @@
 'use client'
 
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { z } from 'zod/v4'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
@@ -51,7 +51,8 @@ export default function LoginPage() {
         try {
             await account.createEmailPasswordSession(data.email, data.password)
             redirect('/admin')
-        } catch (err:unknown) {
+        } catch (err: unknown) {
+            console.error(err)
             if (err instanceof Error)
                 setError(err.message)
             else
@@ -65,7 +66,7 @@ export default function LoginPage() {
             <div>
                 <h2 className="text-2xl font-bold text-white">Se connecter</h2>
                 <p className="mt-2 text-sm text-neutral-400">
-                    Connecte-toi à ton espace personnel.
+                    Connexion à l&apos;espace personnel.
                 </p>
             </div>
 
