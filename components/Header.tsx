@@ -30,9 +30,7 @@ export function Header() {
                     <div className="flex items-center gap-4">
                         
                         <NavbarButton href="#" variant="secondary">
-                            {/* Whatsapp */}
                             <PostsSheet />
-
                         </NavbarButton>
                    
                                                
@@ -80,6 +78,11 @@ export function Header() {
                             </Link>
                         ))}
                         <div className="flex w-full flex-col gap-4">
+                            <NavbarButton href="#" variant="secondary">
+                                {/* Whatsapp */}
+                                <PostsSheet />
+                            </NavbarButton>
+                            
                             <NavbarButton
                                 href="https://wa.me/+2290162140234"
                                 variant="primary"
