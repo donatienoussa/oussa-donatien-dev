@@ -4,25 +4,32 @@ import { getFile, uploadFile } from "./files";
 import { Project } from "@/types";
 
 
+
 //1- CREATE 
 export async function addProject(projectData: {
     title: string;
     description: string;
     features: string[];
-    img: File;
-    techs: string[];
-    link: string;
+    poster: File;
+    video: File;
+    link?: string;
     type: string;
     createdAt: string;
 }) {
 
     try {
 
-        //1- Uploader l'image 
-        const uploaded = await uploadFile(projectData.img);
+        //1- Uploader l'image (poster)
+        const uploadedImage = await uploadFile(projectData.poster);
         
-        if (!uploaded) {
+        if (!uploadedImage) {
             throw new Error("Échec de l'upload de l'image.");
+        }
+
+        const uploadedVideo = await uploadFile(projectData.video);
+        
+        if (!uploadedVideo) {
+            throw new Error("Échec de l'upload de la video.");
         }
 
         const response = await databases.createDocument(
@@ -33,8 +40,8 @@ export async function addProject(projectData: {
                 title: projectData.title,
                 description: projectData.description,
                 features: projectData.features,
-                img: uploaded.$id,
-                techs: projectData.techs,
+                poster: uploadedImage.$id,
+                video: uploadedVideo.$id,
                 link: projectData.link,
                 type: projectData.type,
                 createdAt: projectData.createdAt
@@ -47,7 +54,6 @@ export async function addProject(projectData: {
         throw error;
     }
 }
-
 
 
 //2- READ ONE
@@ -65,12 +71,8 @@ export async function getProjectById({id}: {id: string}): Promise<Project | null
             id: doc.$id,
             title: doc.title,
             description: doc.description,
-            img: await getFile(doc.img),
-            techs: doc.techs.map( async (techId: string) => ({
-                id: techId,
-                title: techId, // Assuming title is the same as id for simplicity
-                icon: await getFile(techId) // Assuming techId is the file ID for the icon
-            })),
+            poster: await getFile(doc.poster),
+            video: await getFile(doc.video),
             link: doc.link,
             features: doc.features,
             type: doc.type,
@@ -121,11 +123,8 @@ export async function fetchProjects({
                 id: doc.$id,
                 title: doc.title,
                 description: doc.description,
-                img: await getFile(doc.img), 
-                // Parcourir les techs pour récupérer les urls des icônes pour l'affichage
-                techs: await Promise.all(
-                    doc.techs.map(async (tech: { $id: string }) => await getFile(tech.$id))
-                ),
+                poster: await getFile(doc.poster), 
+                video: await getFile(doc.video),
                 link: doc.link,
                 features: doc.features, 
                 type: doc.type,
@@ -146,9 +145,9 @@ export async function updateProject(id: string, projectData: {
     title?: string;
     description?: string;
     features?: string[];
-    img?: string;
+    poster?: string;
     iconLists?: string[];
-    link?: string;
+    link?: string ;
     type?: string;
   }) { 
     try {

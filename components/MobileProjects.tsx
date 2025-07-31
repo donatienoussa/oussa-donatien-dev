@@ -1,41 +1,52 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { FaLocationArrow } from 'react-icons/fa6'
-import { useAppwrite } from '@/hooks/useAppwrite'
-import { fetchProjects } from '@/lib/actions/projects'
+import React from 'react';
+import { FaLocationArrow } from 'react-icons/fa6';
+import { useAppwrite } from '@/hooks/useAppwrite';
+import { fetchProjects } from '@/lib/actions/projects';
+import { DeviceFrame } from './DeviceFrame';
 
 
-export function MobileProjects() {
 
+export function MobileProjects({ limit }: { limit?: number }) {
     const { data: projects, loading: projectsLoading } = useAppwrite({
         fn: fetchProjects,
-        params: { type: 'mobile' },
-    })
-    
-    if (projectsLoading) return <p className="text-center text-white">Chargement...</p>
-    
+        params: {
+            type: 'mobile', 
+            limit
+        },
+    });
+
+    if (projectsLoading) {
+        return <p className="text-center text-white">Chargement...</p>;
+    }
+
     if (!projects || projects.length === 0) {
-        return <p className="text-center text-white">Aucun projet trouvé.</p>
+        return <p className="text-center text-white">Aucun projet trouvé.</p>;
     }
 
     return (
         <div className="flex flex-col gap-16 mt-10">
-            {projects.map(({ id, title, description, img, features, link }) => (
+            {projects.map(({ id, title, description, poster, video, features, link }) => (
                 <div
                     key={id}
-                    className="flex flex-col lg:flex-row items-center justify-center gap-10"
+                    className="flex flex-col lg:flex-row items-center justify-center gap-10 animate-in fade-in-up duration-700 ease-out"
                 >
-                    {/* Image - Smartphone style */}
-                    <div className="relative w-[280px] md:w-[300px] lg:w-[340px] aspect-[9/18] rounded-[2rem] border border-gray-700 shadow-xl bg-gradient-to-br from-zinc-900 to-black p-2">
-                        <img
-                            src={img}
-                            alt={title}
-                            className="object-cover rounded-[1.8rem] border-[6px] border-black"
-                        />
-                    </div>
+                    {/* Vidéo intégrée dans cadre smartphone */}
+                    <DeviceFrame>
+                        <video
+                            loop
+                            controls
+                            poster={poster}
+                            className="w-full h-full object-cover rounded-[2rem]"
+                            preload="metadata"
+                        >
+                            <source src={video} type="video/mp4" />
+                            Votre navigateur ne supporte pas la lecture de vidéos.
+                        </video>
+                    </DeviceFrame>
 
-                    {/* Détails projet */}
+                    {/* Détails du projet */}
                     <div className="sm:px-5 flex-1 space-y-4 max-w-xl">
                         <h1 className="font-bold text-2xl lg:text-3xl line-clamp-1">{title}</h1>
                         <p className="text-sm lg:text-base">{description}</p>
@@ -47,27 +58,9 @@ export function MobileProjects() {
                             ))}
                         </ol>
 
-                        <div className="flex items-center justify-between mt-6">
-                            {/* Icônes technologies */}
-                            {/* <div className="flex items-center">
-                                {techs.map((url: string, index: number) => (
-                                    <div
-                                        key={index}
-                                        className="border-2 border-white/[0.2] rounded-full bg-white dark:bg-black w-10 h-10 flex justify-center items-center -ml-2 first:ml-0"
-                                    >
-                                        <Image
-                                            src={url}
-                                            alt={`icon-${index}`}
-                                            className="p-2"
-                                            width={70}
-                                            height={70}
-                                        />
-                                    </div>
-                                ))}
-                            </div> */}
-
-                            {/* Lien */}
-                            {link !== null && (
+                        {/* Lien de téléchargement */}
+                        {link && (
+                            <div className="flex items-center justify-end mt-6">
                                 <a
                                     href={link}
                                     target="_blank"
@@ -77,11 +70,11 @@ export function MobileProjects() {
                                     <p className="text-sm lg:text-base">Télécharger</p>
                                     <FaLocationArrow size={18} />
                                 </a>
-                            )}
-                        </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             ))}
         </div>
-    )
+    );
 }

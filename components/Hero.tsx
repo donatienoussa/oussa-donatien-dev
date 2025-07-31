@@ -8,6 +8,8 @@ import { FaLocationArrow } from 'react-icons/fa6'
 function Hero() {
     return (
         <div className="pb-10 pt-0">
+
+
             {/** Les lumières */}
             <div>
                 <Spotlight
@@ -36,7 +38,7 @@ function Hero() {
                     />
 
                     <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg-text-2xl text-black dark:text-white">
-                        Développeur freelance, je transforme les idées ambitieuses en applications intelligentes et évolutives, en alliant technologie moderne et vision business dans les secteurs FinTech, SaaS, E-Commerce, Web3 et IA
+                        Développeur mobile freelance, je transforme les idées ambitieuses en applications performantes avec React Native, Nest.js et une approche UX centrée produit.
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-center items-center gap-5">

@@ -14,6 +14,7 @@ import { navItems } from "@/data";
 import Link from "next/link";
 import { useState } from "react";
 import { ModeToggle } from "./ui/ModeToggle";
+import { PostsSheet } from "./ui/PostsSheet";
 
 export function Header() {
    
@@ -27,10 +28,15 @@ export function Header() {
                     <NavbarLogo />
                     <NavItems items={navItems} />
                     <div className="flex items-center gap-4">
-                        <NavbarButton href="https://wa.me/+2290162140234" variant="secondary">
-                            Whatsapp
+                        
+                        <NavbarButton href="#" variant="secondary">
+                            {/* Whatsapp */}
+                            <PostsSheet />
+
                         </NavbarButton>
-                        <NavbarButton href="/CV-odb.pdf"  variant="primary">
+                   
+                                               
+                        <NavbarButton href="/CV-odb.pdf" variant="primary">
                             Mon CV
                         </NavbarButton>
                         

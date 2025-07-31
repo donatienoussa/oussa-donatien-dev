@@ -12,22 +12,19 @@ import { cn } from "@/lib/utils";
 export default function Home() {
   return (
     <div className="relative z-0">
+      
       {/* Grille en arrière-plan */}
-      <div
-        className="pointer-events-none fixed inset-0 -z-10"
-        aria-hidden="true"
-      >
+      <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
         <div
           className={cn(
             "absolute inset-0",
             "[background-size:80px_100px]",
-            "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-            "dark:[background-image:linear-gradient(to_right,#141111FF_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
+            "[background-image:linear-gradient(to_right,rgba(228,228,231,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(228,228,231,0.3)_1px,transparent_1px)]",
+            "dark:[background-image:linear-gradient(to_right,rgba(20,17,17,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,38,38,0.2)_1px,transparent_1px)]"
           )}
         />
         <div className="absolute inset-0 bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
-      
       
       
       {/* Contenu principal */}

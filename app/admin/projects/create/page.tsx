@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { z } from 'zod/v4';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Plus } from 'lucide-react';
@@ -8,9 +8,9 @@ import { addProject } from '@/lib/actions/projects';
 import { useForm } from 'react-hook-form';
 import { CreateProjectFormSchema } from '@/lib/validation';
 import { toast } from 'sonner';
-import { getAllTechs } from '@/lib/actions/tech';
-import { useAppwrite } from '@/hooks/useAppwrite';
 import { useRouter } from 'next/navigation';
+import ImageDropzone from '@/components/ImageDropzone';
+import VideoDropzone from '@/components/VideoDropzone';
 
 type ProjectFormData = z.infer<typeof CreateProjectFormSchema>;
 
@@ -18,57 +18,47 @@ type ProjectFormData = z.infer<typeof CreateProjectFormSchema>;
 function CreateProject() {
 
     const router = useRouter();
-    const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
-
-    // Récupération des technologies disponibles
-    const { data: availableTechs} = useAppwrite({
-        fn: getAllTechs, 
-    });
 
     const {
         register,
         handleSubmit,
         setValue,
-        watch,
         formState: { errors, isSubmitting },
     } = useForm<ProjectFormData>({
         resolver: zodResolver(CreateProjectFormSchema),
     });
 
 
-    //Met à jour le champ "techs" dans react-hook-form à chaque sélection
-    useEffect(() => {
-        setValue('techs', selectedTechs);
-    }, [selectedTechs, setValue]);
-
-    const toggleTech = (techId: string) => {
-        setSelectedTechs((prev) =>
-            prev.includes(techId) ? prev.filter((t) => t !== techId) : [...prev, techId]
-        );
-    };
-
     const onSubmit = async (data: ProjectFormData) => {
-
-        try {    
+        
+        try {
             const formattedData = {
                 title: data.title,
                 description: data.description,
                 features: data.features.split(',').map((s) => s.trim()),
-                img: data.img,
-                techs: data.techs,
-                link: data.link,
                 type: data.type,
-                createdAt: new Date().toISOString(),           
+                link: data.link,
+                createdAt: new Date().toISOString(),
+                poster: data.poster,
+                video: data.video,
             };
 
-            await addProject(formattedData);
+            const response = await addProject(formattedData);
+
+            console.log("La réponse", response);
+
+            if (!response.success) {
+                throw new Error(response.message);
+            }
+
             toast.success('Projet ajouté avec succès');
             router.push('/admin/projects');
         } catch (error) {
             console.log("Erreur lors de l'ajout du projet.", error);
-            toast.error('Échec de l\'ajout du projet.Une erreur est survenue');
+            toast.error("Échec de l'ajout du projet. Une erreur est survenue");
         }
     };
+
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-zinc-900 text-gray-800 dark:text-gray-200 flex items-center justify-center p-8 transition-colors duration-300">
@@ -82,7 +72,7 @@ function CreateProject() {
                    
                     {/* Titre */}
                     <div>
-                        <label className="block mb-1 text-sm font-medium">Titre</label>
+                        <label className="block mb-1 text-sm font-medium">Titre *</label>
                         <input
                             {...register('title')}
                             placeholder="Ex: Application de gestion"
@@ -93,7 +83,7 @@ function CreateProject() {
 
                     {/* Description */}
                     <div>
-                        <label className="block mb-1 text-sm font-medium">Description</label>
+                        <label className="block mb-1 text-sm font-medium">Description *</label>
                         <textarea
                             {...register('description')}
                             rows={4}
@@ -105,7 +95,7 @@ function CreateProject() {
 
                     {/* Fonctionnalités */}
                     <div>
-                        <label className="block mb-1 text-sm font-medium">Fonctionnalités (séparées par virgule)</label>
+                        <label className="block mb-1 text-sm font-medium">Fonctionnalités * (séparées par virgule)</label>
                         <textarea
                             {...register('features')}
                             rows={2}
@@ -114,39 +104,45 @@ function CreateProject() {
                         {errors.features && <p className="text-red-600 dark:text-red-400 text-sm">{errors.features.message}</p>}
                     </div>
 
-                    {/* Image */}
+                    {/* Poster */}
                     <div>
-                        <label className="block mb-1 text-sm font-medium">Image</label>
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => {
-                                const file = e.target.files?.[0];
-                                if (file) {
-                                    setValue('img', file, { shouldValidate: true });
-                                }
+                        <label className="block mb-2 text-sm font-medium">Affiche du projet *</label>
+                        <ImageDropzone
+                            onImageSelected={(file) => {
+                                setValue('poster', file, { shouldValidate: true });
                             }}
-                            className="w-full p-2 rounded-lg bg-gray-100 dark:bg-zinc-700 text-gray-900 dark:text-white border border-gray-300 dark:border-zinc-600"
                         />
-
-                        {errors.img && <p className="text-red-600 dark:text-red-400 text-sm">{String(errors.img.message)}</p>}
-
-                        {watch('img') && (
-                            <img
-                                src={URL.createObjectURL(watch('img'))}
-                                alt="Aperçu"
-                                className="mt-4 w-full h-64 object-cover rounded-lg"
-                            />
+                        {errors.poster && (
+                            <p className="text-red-600 dark:text-red-400 text-sm mt-2">
+                                {String(errors.poster.message)}
+                            </p>
                         )}
                     </div>
 
 
+                    {/* Vidéo du projet */}
+                    <div>
+                        <label className="block mb-2 text-sm font-medium">Vidéo du projet *</label>
+                        <VideoDropzone
+                            onVideoSelected={(file) => {
+                                setValue('video', file, { shouldValidate: true });
+                            }}
+                        />
+                        {errors.video && (
+                            <p className="text-red-600 dark:text-red-400 text-sm mt-2">
+                                {String(errors.video.message)}
+                            </p>
+                        )}
+                    </div>
+
+
+
                     {/* Type */}
                     <div>
-                        <label className="block mb-1 text-sm font-medium">Type (web ou mobile)</label>
+                        <label className="block mb-1 text-sm font-medium">Type *</label>
                         <input
                             {...register('type')}
-                            placeholder="web ou mobile"
+                            placeholder="web, mobile ou API Backend"
                             className="w-full p-2 bg-gray-100 dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-white"
                         />
                         {errors.type && <p className="text-red-600 dark:text-red-400 text-sm">{errors.type.message}</p>}
@@ -154,33 +150,15 @@ function CreateProject() {
 
                     {/* Lien */}
                     <div>
-                        <label className="block mb-1 text-sm font-medium">Lien du projet</label>
+                        <label className="block mb-1 text-sm font-medium">Lien du projet (optionnel)</label>
                         <input
                             {...register('link')}
-                            placeholder="https://monprojet.com"
+                            placeholder="https://monprojet.com ou lien store"
                             className="w-full p-2 bg-gray-100 dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-white"
                         />
                         {errors.link && <p className="text-red-600 dark:text-red-400 text-sm">{errors.link.message}</p>}
                     </div>
 
-                    {/* Technologies en relation */}
-                    <div>
-                        <label className="block mb-2 text-sm font-medium">Technologies utilisées</label>
-                        <div className="flex flex-wrap gap-4">
-                            {availableTechs?.map((tech) => (
-                                <label key={tech.id} className="flex items-center gap-2 text-sm">
-                                    <input
-                                        type="checkbox"
-                                        value={tech.id}
-                                        checked={selectedTechs.includes(tech.id)}
-                                        onChange={() => toggleTech(tech.id)}
-                                        className="accent-blue-600 dark:accent-blue-400"
-                                    />
-                                    {tech.title}
-                                </label>
-                            ))}
-                        </div>
-                    </div>
 
                     {/* Bouton */}
                     <button

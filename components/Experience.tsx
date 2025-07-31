@@ -23,7 +23,7 @@ function Experience() {
             key={card.id}
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius="1.75rem"
-            className="flex-1 md:w-[500px] border-neutral-200 dark:border-slate-800 text-black dark:text-white bg-blue-400 dark:bg-zinc-900"
+            className="flex-1 md:w-[500px] border-neutral-200 dark:border-slate-800 text-black dark:text-white bg-blue-600 dark:bg-zinc-900"
           >
             <div className="flex lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <Image

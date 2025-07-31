@@ -20,12 +20,12 @@ export type Project = {
     id: string;
     title: string;
     description: string;
-    link: string;
-    img: string;
+    link?: string;
+    poster: string;
+    video: string;
     features: string[];
-    type: string;
+    type: string; // "web" | "mobile"
     createdAt: string;
-    techs: string[] // Tableau des ids des technologies
 }
 
 

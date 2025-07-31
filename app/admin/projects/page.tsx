@@ -22,7 +22,6 @@ function ProjectsList() {
         params: { type: 'mobile' },
     });
 
-    
     const [search, setSearch] = useState('');
     const [deletingId, setDeletingId] = useState<string | null>(null);
 
@@ -60,14 +59,7 @@ function ProjectsList() {
     };
 
     if (loadingWeb || loadingMobile) return <Loader />;
-    if ((!webProjects?.length || !mobileProjects?.length)) {
-        return (
-            <div className="min-h-screen bg-gray-100 dark:bg-zinc-900 flex items-center justify-center text-gray-500 dark:text-gray-400 p-6">
-                Pas de projets
-            </div>
-        );
-    }
-
+  
     return (
         <div className="min-h-screen p-6 bg-gray-100 dark:bg-zinc-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
             <div className="flex items-center justify-between mb-6">
@@ -91,8 +83,25 @@ function ProjectsList() {
                 />
             </div>
 
-            <ProjectSection title="Projets Web" projects={filteredWebProjects} deletingId={deletingId} handleDelete={handleDelete} />
-            <ProjectSection title="Projets Mobile" projects={filteredMobileProjects} deletingId={deletingId} handleDelete={handleDelete} />
+            {webProjects!.length > 0 &&
+                <ProjectSection
+                    title="Projets Web"
+                    projects={filteredWebProjects}
+                    deletingId={deletingId}
+                    handleDelete={handleDelete}
+                />
+            }
+           
+
+            {mobileProjects!.length > 0 &&
+                <ProjectSection
+                    title="Projets Mobile"
+                    projects={filteredMobileProjects}
+                    deletingId={deletingId}
+                    handleDelete={handleDelete}
+                />
+            }
+           
         </div>
     );
 }
@@ -118,11 +127,24 @@ const ProjectSection = ({
                     <div key={project.id}>
                         <Link href={`/admin/projects/${project.id}`}>
                             <div className="bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-2xl shadow hover:shadow-lg transition p-4 flex flex-col justify-between">
-                                <img
-                                    src={project.img}
-                                    alt={project.title}
-                                    className="w-full h-40 object-cover rounded-xl mb-4"
-                                />
+                                
+                                {/** Affichage miniature de la vidéo façon téléphone */}
+                                <div className="flex justify-center mb-4">
+                                    <div className="relative w-[180px] aspect-[9/20] rounded-[2rem] overflow-hidden bg-black shadow-md">
+                                        <video
+                                            loop
+                                            controls
+                                            poster={project.poster}
+                                            className="w-full h-full object-cover rounded-[2rem]"
+                                            preload="metadata"
+                                        >
+                                            <source src={project.video} type="video/mp4" />
+                                            Votre navigateur ne supporte pas la lecture de vidéos.
+                                        </video>
+                                    </div>
+                                </div>
+
+
                                 <div>
                                     <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                                         {project.title}
@@ -130,19 +152,7 @@ const ProjectSection = ({
                                     <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                                         {project.description}
                                     </p>
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {project.techs.map((url: string, idx: number) => (
-        
-                                            <img
-                                                key={idx}
-                                                src={url}
-                                                alt="tech icon"
-                                                width={24}
-                                                height={24}
-                                                className="w-6 h-6"
-                                            />
-                                        ))}
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </Link>

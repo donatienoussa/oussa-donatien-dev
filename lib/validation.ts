@@ -70,29 +70,27 @@ export const EditServiceFormSchema = z.object({
 
 
 // ---------------------------------- PROJECT SCHEMAS -----------------------------------
+
 export const CreateProjectFormSchema = z.object({
     title: z
         .string()
-        .min(3, "Le titre est requis."),
+        .min(3, { message: "Le titre est requis." }),
     description: z
         .string()
-        .min(10, "La description est trop courte."),
+        .min(10, { message: "La description est trop courte." }),
     features: z
         .string()
-        .refine((val) => val.trim().length > 0, {
-            message: "Les fonctionnalités sont requises (séparées par des virgules)",
-        }),
-    img: z
-        .file()
-        .refine((file) => file instanceof File, {
-            message: "Une image valide est requise.",
-        }),
-    techs: z
-        .array(z.string()),
-    link: z
-        .string(),
+        .min(3, { message: "Les fonctionnalités sont requises." }),
     type: z
         .string()
+        .min(1, { message: "Le type est requis." }),
+    link: z
+        .string()
+        .optional(),
+    poster: z
+        .file({message: "Une image est requise."}), 
+    video: z
+        .file({message: "Une video est requise."}),
 });
 
 

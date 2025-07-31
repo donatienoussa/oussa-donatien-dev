@@ -5,42 +5,42 @@ import { useCallback, useEffect, useState } from "react";
 import { Delete, Upload } from "lucide-react";
 
 interface Props {
-    onImageSelected: (file: File) => void;
+    onVideoSelected: (file: File) => void;
 }
 
-export default function ImageDropzone({ onImageSelected }: Props) {
-    const [image, setImage] = useState<{ file: File; url: string } | null>(null);
+export default function VideoDropzone({ onVideoSelected }: Props) {
+    const [video, setVideo] = useState<{ file: File; url: string } | null>(null);
 
     const onDrop = useCallback((acceptedFiles: File[]) => {
         const file = acceptedFiles[0];
-        const newImage = {
+        const newVideo = {
             file,
             url: URL.createObjectURL(file),
         };
-        if (image) URL.revokeObjectURL(image.url);
-        setImage(newImage);
-        onImageSelected(file);
-    }, [onImageSelected, image]);
+        if (video) URL.revokeObjectURL(video.url);
+        setVideo(newVideo);
+        onVideoSelected(file);
+    }, [onVideoSelected, video]);
 
     const handleDelete = () => {
-        if (image) {
-            URL.revokeObjectURL(image.url);
-            setImage(null);
-            onImageSelected(null!);
+        if (video) {
+            URL.revokeObjectURL(video.url);
+            setVideo(null);
+            onVideoSelected(null!);
         }
     };
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
-        accept: { "image/*": [] },
+        accept: { "video/*": [] },
         multiple: false,
     });
 
     useEffect(() => {
         return () => {
-            if (image) URL.revokeObjectURL(image.url);
+            if (video) URL.revokeObjectURL(video.url);
         };
-    }, [image]);
+    }, [video]);
 
     return (
         <div>
@@ -49,18 +49,19 @@ export default function ImageDropzone({ onImageSelected }: Props) {
                 <div className="flex flex-col items-center border-2 border-dashed border-primary rounded p-5">
                     <Upload className="w-12 h-12 text-primary" />
                     <p className="text-sm mt-3 font-semibold">
-                        {isDragActive ? "Déposez votre image ici" : "Cliquez ou déposez votre image ici"}
+                        {isDragActive ? "Déposez votre vidéo ici" : "Cliquez ou déposez votre vidéo ici"}
                     </p>
                 </div>
             </div>
 
-            {image && (
+            {video && (
                 <div className="flex justify-center mt-4">
-                    <div className="relative w-[180px] aspect-[9/20] rounded-[2rem] overflow-hidden shadow-md bg-black">
-                        <img
-                            src={image.url}
-                            alt="preview"
+                    <div className="relative w-[180px] aspect-[9/20] rounded-[2rem] overflow-hidden shadow-lg bg-black">
+                        <video
+                            src={video.url}
+                            controls
                             className="w-full h-full object-cover rounded-[2rem]"
+                            preload="metadata"
                         />
                         <button
                             type="button"

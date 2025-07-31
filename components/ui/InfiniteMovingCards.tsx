@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 export const InfiniteMovingCards = ({
     items,
     direction = "left",
-    speed = "fast",
+    speed = "normal",
     pauseOnHover = true,
     className,
 }: {
@@ -43,7 +43,7 @@ export const InfiniteMovingCards = ({
 
     const setSpeed = () => {
         const duration =
-            speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
+            speed === "fast" ? "15s" : speed === "normal" ? "150s" : "10s";
         containerRef.current?.style.setProperty("--animation-duration", duration);
     };
 
