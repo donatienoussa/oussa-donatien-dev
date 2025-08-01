@@ -26,7 +26,7 @@ export function MobileProjects({ limit }: { limit?: number }) {
     }
 
     return (
-        <div className="flex flex-col gap-16 mt-10">
+        <div className="flex flex-col gap-16 mt-10 ">
             {projects.map(({ id, title, description, poster, video, features, link }) => (
                 <div
                     key={id}
@@ -47,8 +47,8 @@ export function MobileProjects({ limit }: { limit?: number }) {
                     </DeviceFrame>
 
                     {/* Détails du projet */}
-                    <div className="sm:px-5 flex-1 space-y-4 max-w-xl">
-                        <h1 className="font-bold text-2xl lg:text-3xl line-clamp-1">{title}</h1>
+                    <div className="sm:px-5 flex-1 space-y-4 max-w-xl p-6">
+                        <h1 className="font-bold text-2xl lg:text-3xl line-clamp-2">{title}</h1>
                         <p className="text-sm lg:text-base">{description}</p>
 
                         <h5 className="font-bold text-2xl">Fonctionnalités</h5>

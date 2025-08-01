@@ -77,9 +77,9 @@ export function Header() {
                                 <span className="block">{item.name}</span>
                             </Link>
                         ))}
+
                         <div className="flex w-full flex-col gap-4">
                             <NavbarButton href="#" variant="secondary">
-                                {/* Whatsapp */}
                                 <PostsSheet />
                             </NavbarButton>
                             

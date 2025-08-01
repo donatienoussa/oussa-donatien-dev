@@ -15,9 +15,9 @@ import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
 
 const aboutParagraphs = [
-    `Je suis Donatien OUSSA, développeur full‑stack web & mobile spécialisé en Next.js, React Native et IA.`,
+    `Je suis Donatien OUSSA, développeur mobile full-stack spécialisé en Next.js, React Native, Nest.js et IA.`,
     `Après une licence en Mathématiques & Informatique Générale, je me suis auto‑formé au web, puis j’ai poursuivi en Systèmes d’Information & Réseaux, et une formation mobile.`,
-    `Je développe des apps web, iOS et Android avec React Native, en freelance ou entreprise, selon la méthode SCRUM.`,
+    `Je développe des apps web, iOS et Android avec React en freelance ou entreprise, selon la méthode SCRUM.`,
     `Passionné par l’IA (Python, OpenAI), la blockchain (Solidity), et la 3D Web. Mon credo : créer de la valeur, pas seulement du code.`,
     `Ma méthode : ateliers client, UX/UI, dev scalable en sprints, déploiement continu.`,
     `Projets clés : app IA Aora, messagerie sécurisée, DApp francophone, plateformes métiers.`,

@@ -60,7 +60,7 @@ export function About() {
                 />
             </ul>
 
-            <div className="flex items-center justify-end md:5 md:mr-20 mt-15">
+            <div className="flex items-center justify-end md:5 md:mr-20 mt-5">
                 <AboutSheet />
             </div>
         </section>
