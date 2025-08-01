@@ -9,15 +9,10 @@ import { getAllTechs } from '@/lib/actions/tech';
 import Loader from './ui/Loader';
 import { Title } from './ui/Title';
 import { Quote } from './Quote';
-import { Client, Storage } from 'appwrite';
 
-// const testimonialsClient = new Client()
-//     .setEndpoint('https://cloud.appwrite.io/v1') // ← adapte si besoin
-//     .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID!);
-
-// const storage = new Storage(testimonialsClient);
 
 const Testimonials = () => {
+    
     const { data: testimonials, loading: testimonialsLoading } = useAppwrite({
         fn: fetchTestimonials,
     });
